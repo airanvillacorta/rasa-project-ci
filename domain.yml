@@ -1,0 +1,128 @@
+version: "2.0"
+
+# Lo que responde el chatbot.
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - tell_name
+  - evaluation_subject
+  - saved_practice_notes
+  - compulsory_attendance
+  - material_class
+  - subject_syllabus
+  - previous_exams
+  - group_change
+  - times
+  - schedule
+  - my_name:
+      use_entities:
+        - name
+  - turn_day:
+      use_entities:
+        - turn
+
+entities:
+  - name
+  - turn
+
+slots:
+  name:
+    type: text
+  turn:
+    type: text
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "¡Adios!"
+  - text: "Adios"
+  - text: "Hasta pronto"
+  - text: "Hasta la próxima"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_helpyou:
+  - text: "Hola, ¿En qué puedo ayudarte?"
+  
+  utter_name:
+  - text: Genial...
+
+  utter_ask_name:
+  - text: ¿Con qué profesor deseas la tutoría?
+
+  utter_ask_turn:
+  - text: ¿En qué turno?
+
+  utter_thanks:
+    - text: Gracias por proporcionarnos los datos.
+
+  utter_details_thanks:
+    - text: "Se ha configurado una cita con: {Name},\nEn el turno de: {Turn_day}"
+
+  utter_out_of_scope:
+    - text: Perdón, No te he entendido. ¿Puedes volver a decirme?.
+
+#---
+
+  utter_evaluation_subject:
+  - text: "Cómo es la evaluación de la asignatura..."
+
+  utter_saved_practice_notes:
+  - text: "Se guarda la nota de prácticas..."
+
+  utter_compulsory_attendance:
+  - text: "Asistencia obligatoria..."
+
+  utter_material_class:
+  - text: "Material de estudio..."
+
+  utter_subject_syllabus:
+  - text: "Temario de la asignatura..."
+
+  utter_previous_exams:
+  - text: "Exámenes de otras convocatorias..."
+
+  utter_group_change:
+  - text: "Cambio de grupo..."
+
+  utter_times:
+  - text: "Estas son las fechas..."
+
+  utter_schedule:
+  - text: "Éste es el horario de clases..."
+
+#---
+
+actions:
+  - action_submit
+forms:
+  user_details_form:
+    name:
+      - type: from_entity
+        entity: name
+    turn:
+      - type: from_entity
+        entity: turn
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,85 @@
+version: "2.0"
+
+# Historias de usos: Plantillas iniciales de las conversaciones entre el usuario y rasa.
+
+stories:
+
+- story: Saludo inicial
+  steps:
+  - intent: great
+  - action: utter_helpyou
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+#---
+
+- story: evaluacion_asignatura
+  steps:
+  - intent: evaluation_subject
+  - action: utter_evaluation_subject
+
+- story: notas_practicas_guardadas
+  steps:
+  - intent: saved_practice_notes
+  - action: utter_saved_practice_notes
+
+- story: asistencia_obligatoria
+  steps:
+  - intent: compulsory_attendance
+  - action: utter_compulsory_attendance
+
+- story: material_clase
+  steps:
+  - intent: material_class
+  - action: utter_material_class
+
+- story: temario_asignatura
+  steps:
+  - intent: subject_syllabus
+  - action: utter_subject_syllabus
+
+- story: Exámenes anteriores
+  steps:
+  - intent: previous_exams
+  - action: utter_previous_exams
+
+- story: Cambio de grupo de teoría o prácticas
+  steps:
+  - intent: group_change
+  - action: utter_group_change
+
+- story: Responder fechas de exámenes y prácticas
+  steps:
+  - intent: times
+  - action: utter_times
+
+- story: Horario de clases
+  steps:
+  - intent: schedule
+  - action: utter_schedule
+

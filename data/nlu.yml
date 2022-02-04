@@ -1,0 +1,794 @@
+version: "2.0"
+
+# Lo que esperamos que escriban los usuarios.
+
+nlu:
+
+- intent: greet
+  examples: |
+    - hola
+    - hola, ¿Qué tal?
+    - buenas
+    - muy buenas
+    - ey!
+    - saludos
+
+- intent: goodbye
+  examples: |
+    - adios
+    - hasta pronto
+    - me voy
+    - chao chao
+    - bye
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+#----- Add teacher.
+
+- intent: tell_name
+  examples: |
+    - Hola, quisiera poder reunirme con usted para resolver algunas dudas. ¿Me podría indicar cuando le viene bien?
+    - ¿Podría atenderme para una consulta el viernes?
+    - ¿Podría acudir al despacho de [Cayetano]{"entity":"name","value":"Cayetano"} a preguntarte una duda cuando pueda?
+    - Cuando estaría disponible para hacer una tutoría?
+    - ¿Cuándo podría tener una tutoría con alguno de los profesores?
+    - Me preguntaba si podía asistir a una tutoría suya pronto
+    - Buenos días, ¿cuando sería posible tener una tutoría?
+    - ¿Pdría pedir una tutoría con usted?
+    - Me gustaría asistir a una tutoría con usted
+    - ¿Qué horas de tutoría hay disponibles?
+    - Disculpe, ¿podría establecer una fecha para realizar una tutoría con usted?
+    - Me gustaría saber si es posible asistir a una tutoría con usted cuando le venga mejor
+    - Buenas, me gustaría preguntarle si dispone de alguna hora libre para tutoría
+    - el próximo martes estaría libre para hacer una tutoría
+    - ¿Cual es su horario de tutoras?, me gustaría comentarle una duda
+    - Buenos días, me gustaria pedir una tutoria para su asignatura. ¿Que horas tiene disponibles?
+    - Tutoria
+    - Buenos días, tengo dudas sobre algunos de los temarios dados en clase. Me gustaría comentarle algunas de esas dudas por si podría ayudarme con ellas en alguna tutoría.
+    - Buenos días. Sería posible quedar en su despacho para resolver algunas dudas que tengo sonbre la asignatura? Saludos.
+    - Buenas tardes. Me gustaría poder solicitar una tutoría. ¿Cuando podría ser una buena fecha?
+    - Hola, una pregunta, ¿cuándo podría tener una tutoría con usted? Gracias de antemano. Saludos
+    - Disculpe las molestias profesor. Le escribía para pedirle tutoría cuando pudiera. Muchas gracias de antemano.
+    - Estimado Profesor  ¿ sería posible fijar una tutoría para aclarar algunas dudas ?
+    - ¿Podría disponer de una tutoría con usted?
+    - Quiero una tutoría
+    - ¿cuando puedo ir a tutoria?
+    - Me gustaría concertar una tutoría mañana
+    - ¿Es posible coger una tutoría?
+    - Buenos dias, necesitaría una tutoría con usted, ¿cuando sería posible tener una?
+    - ¿Podría reservar una tutoría con [Cayetano]{"entity":"name","value":"Cayetano"}?
+    - Buenos días. Me gustaría asistir a una tutoría con el coordinador de la asignatura lo antes posible ¿Cuándo sería posible?
+    - Hola, buenas tardes, quería concertar una hora para una tutoría
+    - ¿Sería posible concertar una tutoría con usted?
+    - ¿Podría solicitar una tutoría?
+    - Buenas, me gustaría tener una tutoría con usted. Muchas gracias
+    - Hola, buenos días, ¿sería posible disponer de una tutoria para resolver unas dudas? Gracias.
+    - ¿Para que fecha podría solicitar una tutoría?
+    - Hola, me gustaría asistir a una tutoría con usted para resolver algunas dudas.
+    - Buenas, me gustaría pedirle una tutoría. ¿Me podría informar sobre cuando puede ser? Un saludo
+    - Me gustaría poder concertar una tutoria para aclarar ciertas dudas. ¿En qué horario podemos realizarla?
+    - Buenos días, me gustaría saber si podría ir a tutoría mañana. Espero su respuesta, gracias.
+    - Muy buenas, me gustaría saber cuando podríamos tener una tutoría, muchas gracias, un saludo.
+    - Buenos días, me gustaría atender a una tutoría con usted a mayor brevedad posible puesto que tengo algunas dudas que me gustaría resolver. Un saludo.
+    - Cuando puedo hacer unas horas de tutoria?
+    - Buenas [Mario]{"entity":"name","value":"Mario"}, me gustaría pedir hora para una tutoría con usted. Como soy del doble grado no puedo ir en el horario habitual y solo podría los viernes por la tarde o los lunes por la mañana
+    - Buenos días, ¿Podría darme una hora para tutoría la próxima semana?
+    - ¿Tendría alguna hora disponible para resolver unas dudas?
+    - Disculpe, ¿podría darme alguna hora para acudir a tutoría para la próxima semana?
+    - Hola buenas, me gustaría saber que día puedo pasarme por despacho para resolver unas duduas. Un saludo.
+    - Hola, ¿puede indicarme cuando podría tener una tutoría con usted??
+    - ¿Cuando podría verlo para resolver unos problemas que tengo en su asignatura?
+    - Buenos días, ¿cuándo podría tener una tutoría con usted?. Gracias.
+    - Buenas, me gustaría solicitar una tutoría, ¿cuando sería posible?
+    - Buenas tardes, ¿sería posible acordar una tutoría para resolver algunas dudas que tengo? Muchas gracias y disculpe las molestias. Un saludo.
+    - Necesito concertar una cita para una sesión de tutoría
+    - ¿hay alguna hora de tutoría libre esta semana?
+    - Buenas tardes, me pongo en contacto con usted para 
+    - ¿Podríamos hacer una tutoría?
+    - Buenas, me gustaría pedir una cita con usted.
+    - ¿Podríamos tener una tutoría?
+    - Buenos días, me gustaría tener una tutoría lo antes posible
+    - Perdone, ¿podría tener una tutoría privada? Cuando estén libres
+    - Buenas, ¿dispone de tiempo libre para una tutoria?
+    - Quería consultar por la posibilidad de solicitar una tutoría con usted
+    - ¿Podríamos ajustar una tutoría para estos días?
+    - Me gustaría solucionar una duda que tengo
+    - ¿Podría tener una tutoría privada con usted?
+    - Hola buenos días, quisiera saber si podemos acordar un día para asistir a tutoría.
+    - Solicitar tutoría a [Daniel]{"entity":"name","value":"Daniel"}
+
+- intent: evaluation_subject
+  examples: |
+    - ¿Cómo se supera la asignatura?
+    - ¿Tengo que tener la práctica superada para que me corrija el examen?
+    - ¿cómo se corrigen las prácticas?
+    - ¿cómo se corrige el examen?
+    - hay que aprobar la parte teórica y práctica independientemente?
+    - Se hace la media?
+    - Se hace la media de las prácticas y el examen?
+    - ¿Cómo funciona la evaluación de la asignatura?
+    - ¿Cuáles son los criterios de evaluación?
+    - Como es la evaluación?
+    - ¿Cómo será la evaluación de la asignatura?
+    - Me preguntaba cómo va a ser la evaluación de la asignatura
+    - ¿Podrías darme indicaciones de como se procederá a evaluar la asignatura?
+    - Me gustaría preguntar cuando y como va ser la evalución
+    - Quisiera saber los porcentajes de evaluación de cada parte
+    - ¿Cómo se evaluarán las prácticas de la asignatura?
+    - Me gustaría saber de qué forma se evalúa la asignatura
+    - ¿Me podría explicar cómo va a ser la evaluación de su asignatura?
+    - Me gustaría saber como son los criterios de evaluación de la asignatura 
+    - La evaluación de la asignatura no me ha quedado clara, ¿le importaría aclararme una duda?
+    - ¿cuánto cuesta las prácticas en la evaluación?
+    - ¿Como se evaluara esta asignatura?¿Por examenes o practicas?
+    - Buenos días, querria saber como va a ser la evaluación de la asignatura si fuese posible.
+    - Evaluación
+    - Buenos días, ¿podría aclararme como son los criterios de evaluación de la asignatura? Ya que no me han quedado claros con el proyecto docente y tengo algunas dudas.
+    - Hola buenas. Tenía dudas acerca de como funciona la evaluación de la asignatura. Sería tan amable de explicarme como funciona?
+    - Buenas tardes. Me gustaría saber como será el desarrollo de las clases de la asignatura.
+    - Quisiera saber cómo es la evaluación de la asignatura
+    - Buenas, me gustaría conocer los criterios de evaluación de la asignatura. Muchas gracias de antemano. 
+    - ¿Como está estructurada la evaluación de la asignatura ? 
+    - ¿Como se evaluara la asignatura?
+    - No tengo ni idea de como nos puntúan en  esta asignatura, ¿me podrías iluminar?
+    - ¿cómo se evaluará la asignatura?
+    - Buenas, ¿cual es la ponderación de las partes de la asignatura con respecto a la convocatoria ordinaria?
+    - ¿Cómo se evalua la asignatura?
+    - Hola, tengo la duda de como sería el porcentaje de validez de cada parte de la asignatura a la hora de la evaluación.
+    - ¿Cómo va a ser la evaluación de FSI?
+    - Me he leído el proyecto docente y no me queda claro la evaluación de la asginatura.¿Es necesario aprobar cada práctica por separado?
+    - Me gustaría saber como se va a evaluar la asignatura, ya que no me quedó muy claro leyendo el proyecto docente
+    - ¿Cuál es el método de evaluación de esta asignatura?
+    - ¿Es necesario aprobar la parte de teoría y prácticas para superar la asignatura?
+    - Buenas, me gustaría saber como se nos va a evaluar en la asignatura. Muchas gracias
+    - Hola, tengo una duda sobre el método de evaluación de la asignatura, ¿podrían explicarme cómo funciona?
+    - Me gustaría conocer como se realiza la evaluación de la asignatura si fuera posible.
+    - ¿Cómo es la evaluación?
+    - Hola, me gustaría saber cómo es la evaluación de esta asignatura.
+    - Hola, me gustaría saber como va a ser la evaluación de la asignatura
+    - ¿Cuáles son los criterios de evaulación de la asignaura?
+    - Hola, quisiera saber cómo se va a regir la evaluación de la asignatura ya que en el proyecto docente no se deja muy claro. Disculpe las molestias, muchas gracias.
+    - Muy buenas, me gustaría saber si podrías explicarme como va a ser la evaluación de la asignatura, muchas gracias, un saludo.
+    - Buenas, tengo ciertas dudas sobre el sistema de evaluación de la asignatura ya que según me han dicho ha cambiado respecto al año pasado.
+    - Puedo saber como va a ser la evaluacion de la asignatura?
+    - Buenas, le escribo porque el día de la presentación tenía una consulta médica y no he podido enterarme de la evaluación de la asignatura. ¿Podría usted contarme por este medio cómo es el sistema de evaluación?
+    - Buenas tardes, me gustaría saber como se evalúa la asignatura, ¿Podría explicármelo?
+    - Me gustaría saber cual será el procedimiento de evaluación.
+    - Buenas, ¿puedes recordarme como sera la evaluación de la asignatura?
+    - ¿ Me podrías explicar de que manera se llevará acabo la evaluación de la asigntura ?.
+    - ¿Cómo se realizará la evaluación de la asignatura??
+    - ¿Cual es el método de evaluación que utiliza en la asignatura?
+    - He estado consultando el proyecto docente acerca de la evaluación de la asignatura pero no me ha quedado muy claro ¿podría aclararme como será exactamente?
+    - Hola, ¿donde puedo conseguir más información sobre la evaluación de la asignatura?
+    - Buenas tardes, me gustaría saber si la evaluación continua es mediante parciales o será con un examen final. Muchas gracias y disculpe las molestias. Un saludo.
+    - Me gustaría saber como se pretende evaluar a los alumnos
+    - ¿cómo es la evaluación?
+    - Buenas, me gustaria saber como va a ser la evaluación de la asignatura
+    - ¿Cómo se evalúa la asignatura?
+    - Me gustaría saber como será la evaluación de la sginatura
+    - ¿Cómo se evaluará la asignatura?
+    - ¿Cómo se evaluará la asignatura?¿Exámenes, trabajos?
+    - ¿Sabe cómo va a ser la evaluación de la asignatura?
+    - Disculpe, ¿cómo se evaluará la asignatura?
+    - Disculpa, la evaluación de ¿La asignatura como se va a llevar a cabo?
+    - ¿Podría decirme como va a ser evaluada la asignatura?
+    - ¿Cómo será el sistema de evolución?
+    - ¿Cómo será la evaluación de los contenidos?
+    - Hola buenos días, quisiera saber si podría darme información sobre la evaluación de la asignatura.
+    - ¿Cómo se evalua la asignatura?
+
+- intent: saved_practice_notes
+  examples: |
+    - ¿La nota de prácticas se guarda para el curso del año que viene?
+    - ¿Se mantienen las prácticas para los próximos años?
+    - ¿Se mantienen las prácticas los próximos dos años?
+    - Las practicas se guardan?
+    - ¿Puedo mantener la nota práctica en las siguientes convocatorias?
+    - He aprobado las prácticas este año, y me preguntaba si se guardaban estas notas de cara a las próximas convocatorias
+    - ¿Se guardan las prácticas para años próximos?
+    - Yo ya aprobé las prácticas, ¿Es necesario que las repita??
+    - Si suspendo la asignatura se me guardarán las notas de prácticas para el curso que viene
+    - ¿La nota de prácticas se guarda?
+    - ¿Se guardan las prácticas para futuras convocatorias?
+    - Me gustaría saber si las notas de prácticas se guardan para las próximas convocatoria
+    - ¿La nota obtenida en la práctica, se me guarda para próximas convocatorias?
+    - Tengo las prácticas del año pasado aprobadas y no sé si tengo que volver a hacerlas este año, ¿me podría decir como van?
+    - Tengo las práctica aprobadas y me gustaría saber si se mantendrían para la próxima convocatoria
+    - ¿Me guardan las practicas para la proxima convocatoria?
+    - ¿Las clasificaciones de las practicas son validadas para proximas convocatorias? ¿Esto cuanto tiempo dura?
+    - Guardado de las practicas
+    - Buenos dias, tengo dudas sobre las calificaciones de prácticas para otros años. ¿Se guardan o cada año hay que repetir las prácticas?
+    - Hola. tenía una duda. Se guarda la nota de las prácticas para años posteriores?
+    - Buenas. Resulta que este año he aprobado las prácticas. ¿Las calificaciones obtenidas se guardan para otros años?
+    - Buenas. Quisiera saber si mis prácticas aprobadas de otros años se me guardan. Gracias.
+    - Buenas, me gustaría saber, si se guardan las calificaciones de prácticas para el próximo año.
+    - ¿Las practicas son válidas al final de la evaluación ?
+    - Las prácticas se guardan como esta establecido por la universidad, ¿no?
+    - ¿Se guardan las notas de las prácticas para otros años?
+    - ¿Las prácticas de otros años se guardan?
+    - ¿Cuantos años se guardan las prácticas?
+    - ¿Cuentan las prácticas para las próximas convocatorias?
+    - Hola, el año pasado aprobé las prácticas, ¿son válidas para este curso?
+    - ¿La nota de las prácticas se guarda?
+    - He aprobado las prácticas de la asignatura en el curso anterior ¿Se me guardan para este curso o he de hacerlas de nuevo?
+    - Buenas tardes, el año pasado aprobé el examen teórico pero suspendí las prácticas, ¿esa nota se me guardará ?
+    - ¿Se guardan las prácticas aprobadas de años anteriores?
+    - ¿Las prácticas del año pasado se guardan?
+    - Buenas, me gustaría saber si las calificaciones que obtenga en las prácticas son válidas para futuras convocatorias. Muchas gracias
+    - Soy alumno repetidor y me gustaría saber si se guarda mi nota de prácticas
+    - Hola buenas, el año pasado aprobé las practicas y me gustaría conocer si siguen vigentes este año o debería repetirlas. Gracias
+    - ¿La nota de las prácticas me sirven para los siguientes años?
+    - Hola, este mensaje es para consultar si las calificaciones de las prácticas se guardan para las próximas convocatorias.
+    - Buenas, me gustaría saber si mi calificación de practicas de este año será válida para las próximas convocatorias
+    - Me preguntaba si mi nota de práctica se guarda para las proximas convocatorias y hasta cuándo.
+    - Buenas tardes, tengo una duda sobre la duración de la calificación de las prácticas, ¿hasta que convocatoria me sirven las notas de mis prácticas?
+    - hola, ¿podrías decirme si las calificaciones de prácticas son válidas para otras convocatorias?
+    - Buenas tardes, soy un alumno que aprobó las prácticas de la asignatura el curso anterior y tenía la duda sobre si se me guardan para este año y de ser así, para cuántas convocatorias. Gracias y un saludo.
+    - Puedo preguntarle si las calificaciones de practicas son validas para proximas convocatorias?
+    - Buenas, le escribo porque me gustaría saber si las notas de prácticas aprobadas en el curso presente se guardan para el año siguiente
+    - ¿Cuánto tiempo dura la nota de prácticas?
+    - ¿Si suspendo teoría se guardan las notas de prácticas?
+    - Buenas, me gustaría saber si las practicas se guardan para futuras convocatorias
+    - Tengo las prácticas aprobadas de un año anterior, me gustaria saber si dicha nota se queda guardada para el próximo año.
+    - Si aprobase las prácticas este curso pero no la teoría, ¿las tendría guardadas el curso que viene??
+    - Si no aprobara la asignatura, las calificaciones de practicas podrían ser validas la próxima convocatoria? 
+    - ¿Las clasificaciones de las prácticas se guardarán el año que viene?
+    - ¿Las prácticas del curso del año pasado se guardan para las siguientes convocatorias?
+    - Buenas tardes, me gustaría saber si la nota de las prácticas se guarda o si es necesario repetirlas. Muchas gracias y disculpe las molestias. Un saludo.
+    - ¿Se mantiene la nota de las prácticas para la siguiente convocatoria?
+    - ¿Se guarda la nota de prácticas pal año que viene?
+    - Buenas, me gustaria saber si las practicas aprobadas son validas para las siguientes convocatorias
+    - ¿Las prácticas se guardan?
+    - ¿Se me guardarán las notas de prácticas para futuras convocatorias?
+    - ¿Se guardan las prácticas para el siguiente año?
+    - En caso de aprobar las prácticas, ¿se mantiene la nota?
+    - ¿Se guarda la nota de prácticas?
+    - Disculpe, ¿se guardarán las prácticas para próximos cursos?
+    - ¿Sabe si se guarda la nota de prácticas de años anteriores? 
+    - ¿Se me guardan las calificaciones de prácticas?
+    - ¿La nota de las prácticas de guardan?
+    - ¿Se guardarán las calificaciones para futuras convocatorias?
+    - Hola buenos días, me pongo en contacto con usted para preguntarle si las prácticas se guardan para próximas convicatorias
+    - ¿Se guarda la nota de prácticas?
+
+- intent: compulsory_attendance
+  examples: |
+    - ¿La asistencia a clase es obligatoria?
+    - ¿Es obligatoria la asistencia?
+    - ¿Es necesario asistir para aprobar?
+    - Hay que ir a clase?
+    - Por coincidencia de clases no puedo ir, ¿Es obligatoria la asistencia a ellas?
+    - Me preguntaba si la asistencia a clase es obligatoria
+    - ¿Es necesaria la asistencia?
+    - ¿Para la evalución es obligatorio ir a clases de teoría?
+    - ¿Existe asistencia obligatoria en la asginatura?
+    - ¿Cuánto se valora la asistencia?
+    - ¿Es obligatoria la asistencia?
+    - ¿Es obligatorio ir a clase?
+    - ¿La asistencia a clase es obligatoria?
+    - ¿La asistencia de a las clases influyen en la evaluación de la clase?
+    - ¿Este año cuenta la asistencia?
+    - ¿Es obligatorio asistir a clase?
+    - Es obligatorio venir a clase?
+    - Clase obligatoria
+    - Buenos días, por asuntos personales me es imposibe acudir a clase de teoría los jueves. ¿Acarrea eso algún problema  a la hora de los criterios de evaluación?
+    - Buenos días. Me podría explicar, si es tan amable, como funciona la asistencia a la asignatura?
+    - Buenos días. Me gustaría saber como se valora el control de asistencia en esta asignatura.
+    - Hola. Quisiera preguntarle si es obligatoria asistir a clases.
+    - Buenas, me han cambiado los horarios de la jornada laboral, y actualmente me hes imposible asistir a clase en el horario establecido. Por ello me gustaría preguntarle si es obligatoria la asistencia a clase. Muchas - gracias de antemano.
+    - Esta semana no puedo venir a la clase ¿es obligatorio poner asistencia ? 
+    - ¿Ir a clase es obligatorio, o se puede faltar?
+    - ¿Tengo que ir a clase, o puedo faltar sin que penalice?
+    - ¿Es obligatorio ir a clase?
+    - Buenas, ¿es la asistencia obligatoria?
+    - ¿Hay que ir a clase?
+    - Hola buenas, no tengo claro si es obligatorio asistir a las clases
+    - ¿Es obligatorio asistir a clase?
+    - ¿La asistencia es obligatoria para aprobar la asignatura?
+    - La asistencia a clase es obligatoria ?
+    - ¿Es la asistencia a clase obligatoria?
+    - ¿Es necesario asistir a todas las clases?
+    - Buenas, me preguntaba si es estrictamente necesario asistir a clase para aprobar
+    - Buenas tardes, ¿es obligatoria la asistencia a clase o sólo afecta a la nota correspondiente sin mayor problema?
+    - Hola, me gustaría saber si es obligatorio la asistencia en la asignatura.
+    - ¿Es obligatorio asistir a clase?
+    - Hola. Me gustaría consultar si es obligatorio ir a clase.
+    - Hola, me podría informar sobra la obligatoriedad de la asistencia a clase
+    - ¿Es obligatorio la asistencia a las clases teóricas?
+    - Buenas días, me gustaría saber si la asistencia a clase es obligatoria, puesto que tengo trabajo y me va a ser complicado asistir.
+    - Muy buenas, ¿Es obligatorio asistir a clase?
+    - Varios compañeros me han dicho que este año hay porcentaje mínimo de asistencia para poder presentarse a la convocatoria ordinaria. ¿Es eso cierto?
+    - es obligatorio ir a clase?
+    - Buenas, soy un alumno de informática y le escribo porque tengo una asignatura que se me solapa con FSI y no podré asistir a todas las clases. ¿Existe algún tipo de problema como un requisito de asistir a un número - mínimo de clases o una parte de la nota que se corresponda con la asistencia?
+    - La asistencia a clase, ¿Es obligatoria?
+    - Me gustaría saber si la asistencia es obligatoria para aprobar.
+    - Buenas, me preguntaba si la asistencia es obligatoria y que porcentaje de la nota abarca
+    - ¿ Es necesario asistir a clases para aprobar la asignatura ?.
+    - ¿Es obligatoria la asistencia a las clases de la asignatura??
+    - Si no pudiera asistir a clases afectaría mi calificación de la asignatura?
+    - ¿La asistencia cuenta en la nota final de la asignatura?
+    - ¿Es obligatorio asistir a clases?
+    - Buenas tardes, me gustaría saber si la asistencia a clase es obligatoria para aprobar la asignatura. Muchas gracias y disculpe las molestias. Un saludo.
+    - ¿Es obligatorio asistir a las clases?
+    - ¿qué pasa si no voy a clase?
+    - Buenas, me pongo en contacto con usted para saber si es obligatorio asistir a todas las clases
+    - ¿La asistencia es obligatoria?
+    - ¿Es la asistencia obligatoria?
+    - ¿Se puntúa la asistencia?
+    - ¿La asistencia es obligatoria?
+    - ¿La asistencia es obligatoria?
+    - Perdone, ¿Es obligatorio asistir a clase?
+    - ¿Se pasará la asistencia en clase y será fuente de evaluación?
+    - ¿La clase de hoy va a ser importante?
+    - ¿La asistencia cuenta para nota?
+    - ¿Es necesario asistir a todas las clases?
+    - Soy repetidor, y quisiera saber si es obligado ir a clase
+    - ¿Puedo faltar a clase?
+
+- intent: material_class
+  examples: |
+    - ¿Donde podría encontrar apuntes, transparencias, o exámenes de años anteriones?
+    - ¿Dónde puedo encontrar las transparencias de las clases?
+    - ¿Cuáles son los libros de la asignatura?
+    - De donde puedo estudiar?
+    - ¿Dónde puedo encontrar material para asignatura?
+    - Me preguntaba si hay algún sitio donde pueda obtener material de clase, como algunos apuntes, los libros de la asignatura o las transparencias de clase
+    - De donde me recomiendas estudiar
+    - Una pregunta,¿Dónde podríamos sacar o encontrar material opcional para completar la materia?
+    - Me gustaría saber si disponemos de recursos para obtener información acerca de la asignatura
+    - ¿Dónde puedo conseguir las diapositivas?
+    - ¿Dónde puedo acceder al material de clase?
+    - ¿Dónde podría encontrar el material de clase?
+    - ¿Dónde se encuentra la documentación de clase?
+    - Tengo dudas sobre cierto tema que hemos dado en clase, ¿que material adicional me recomendaría?
+    - ¿Qué libros tratan el tema del machine learning?
+    - ¿Que material podria utilizar para la clase?
+    - Donde puedo encontrar apuntes o resumenes de cara a la convocatoria ordinaria.
+    - Apuntes
+    - Buenos días, me he dado cuenta de que el material que se encuentra en la página de la asignatura me resulta incompleta y quería preguntar si existe más información y si es así, dónde puedo conseguirla
+    - Hola. Sería por favor tan amable de recomendarme bibliografía que pudiera usar para complementar el estudio de la asignatura?
+    - Buenas. Me gustaría solicitar información acerca de fuentes fiables de información para poder llevar a cabo el estudio de la asignatura
+    - Buenas. Me gustaría saber si hay material adicional y dónde encontrarlo.
+    - Buenas, Me podría decir si existe algún material escolar o la ubicación de alguno, que me permita estudiar la asignatura de forma óptima.
+    - ¿Tienes material de estudio ? 
+    - ¿Donde podría documentarme mejor para entender mejor las clases?
+    - Necesito libros y apuntes sobre la asignatura, ¿donde los podría encontrar?
+    - ¿Dónde puedo encontrar los apuntes de clase?
+    - Hola, me gustaría solicitar algún tipo de guía sobre posible documentación de la asignatura
+    - ¿Que libros son importantes para la asignatura?
+    - Hola, donde puedo encontrar material para la asignatura?
+    - ¿Dónde puedo encontrar apuntes sobre el temario de clase?
+    - ¿Dónde puedo encontrar material de apoyo para indagar sobre redes neuronales?
+    - ¿Existe alguna bibliografía disponible ?
+    - ¿Dónde podría encontrar el material de la asignatura?
+    - ¿Cuál  es la bibliografía de la asignatura ?
+    - Buenas, me gustaría saber cómo puedo acceder al material de la asignatura
+    - A parte de lo subido al campus virtual, ¿existen otros recursos para poder estudiar la asignatura?
+    - ¿Existen algunos libros, material, transparencias especialmente recomendados que sean útiles a la hora de llevar al día la asignatura?
+    - ¿Dónde puedo conseguir los apuntes?
+    - Hola, en el campus virtual no se encuentra disponible los apuntes de esta asignatura. ¿En donde los puedo encontrar?
+    - Me gustaría saber donde encontrar material para la asignatura.
+    - ¿Dónde puedo encontrar los materiales e información de estudio de la asignatura?
+    - Buenos días, me gustaría saber que tipo de apuntes o libros puedo llegar a necesitar en clase y dónde podría encontrarlos
+    - Muy buenas, ¿Me podría decir donde encontrar material para estudiar?
+    - Me preguntaba si me podrías recomendar algún libro sobre el tema 6 de la asignatura.
+    - Tienes algun sitio donde puedo encontrar material util?
+    - Buenas, le escribo porque me gustaría saber donde puedo obtener el material docente y bibliográfico recomendado para la asignatura. Muchas gracias y un saludo
+    - ¿Dónde podría encontrar material de la asignatura?
+    - ¿Donde puedo acceder a las transparencias usadas en clase?
+    - Disculpe, ¿Donde puedo encontrar material auxiliar para la asignatura?
+    - ¿ Me recomienda el uso de material adicional al del campus para preparar la asignatura ?.
+    - ¿Podría indicarme si existen materiales extras a los aportados para estudiar? Ya sean libros, apuntes, ...
+    - ¿Que materiales me recomendaría para reforzar los conocimientos vistos en el aula?
+    - ¿Podría recomendarme alguna bibliografía adicional para estudiar la asignatura?
+    - Buenas tardes, ¿dónde podemos conseguir material profundizar sobre la materia de la asignatura?
+    - Buenas tardes, me gustaría saber acerca de la existencia de material de referencia de la asignatura. Muchas gracias y disculpe las molestias. Un saludo.
+    - ¿Dónde podría encontrar el material complementario de clase?
+    - ¿Dónde está lo que tengo que estudiar?
+    - Buenas, me gustaria saber donde puedo encontrar material adicional para el seguimiento de las clases
+    - ¿Dónde están los apuntes?
+    - ¿Dónde puedo encontrar material de estudio para esta asignatura?
+    - ¿Dónde puedo acceder al material de la asignatura?
+    - ¿Existen algunos apuntes que ayuden a estudiar la asignatura?
+    - ¿Dónde puedo encontrar apuntes de la asignatura?
+    - Disculpe, ¿dónde podría consultar el material de la asignatura?
+    - Disculpa, me gustaría preguntar si puede recomendar algún material de estudio de los contenidos de la asignatura. 
+    - Quería saber donde se encuentra estos materiales de clase.
+    - ¿Hay apuntes?
+    - ¿Dónde puedo encontrar el material de apoyo para las clases?
+    - Donde puedo encontrar los apuntes de esta asignatura
+    - ¿Donde puedo encontrar las trasparencias de la asignatura?
+
+- intent: subject_syllabus
+  examples: |
+    - ¿Qué es lo que se estudia en esta asignatura?
+    - ¿Qué se da en la asignatura?
+    - ¿Qué daremos en la asignatura?
+    - Que entra en la asignatura?
+    - ¿Quería saber que vamos a dar en la asignatura?
+    - Me preguntaba cuál era exactamente el temario de la asignatura
+    - ¿Qué entra en la asignatura?
+    - ¿Qué temas vamos a dar este año?
+    - Estaría interesado en saber qué temas forman la asignatura
+    - ¿Qué es lo que se va a dar?
+    - ¿Qué temas estudiaremos en la asignatura?
+    - ¿Cuáles son los diferentes temas de los que va a tratar la asignatura?
+    - ¿Cuál es el temario de la asignatura?
+    - ¿En este semestre que vamos a ver en clase?
+    - ¿Después del machine learning que temas van?
+    - ¿Cuales son los contenidos del temario de la asignatura?
+    - Que cosas daremos en la asignatura.
+    - Temario
+    - Buenos días, dado que no se explica con mucha claridad en el  proyecto docente de la asigantura. Me gustaría preguntar sobre los contenidos de la asignatura
+    - Buenas. Podría aclararme el contenido/temario que se impartirá en la asignatura?
+    - Buenas tardes. Me gustaría saber donde puedo encontrar el temario de la asignatura
+    - ¿Cuál es el temario de la asignatura?
+    - Buenas, me gustaría preguntarle, cuáles son los contenidos teóricos de la asignatura.
+    - ¿Cuales son los argumentos de la asignatura ? 
+    - ¿Que se verá este año en la asignatura?
+    - Que se verá en esta asignatura
+    - ¿qué se dará en la asignatura?
+    - Buenas tardes, querría saber cuales son los temas de la asignatura
+    - ¿Cual es el temario?
+    - Buenos dias, en cuanto al temario de la asignatura, ¿podría decirme cual es el índice del mismo?
+    - ¿Cuál es el temario de la asignatura?
+    - ¿Cómo está estructurado el temario? ¿Qué temas se abordan?
+    - ¿Qué abarcan los temarios de la asignatura?
+    - ¿Dónde puedo encontrar el temario de la asignatura?
+    - ¿Cuál es el temario de la asignatura?
+    - Buenas, me gustaría saber cuál va a ser el temario de la asignatura, así como los conocimientos previos que se requieren
+    - Buenos días, me gustaría conocer el temario de la asignatura
+    - Me gustaria saber cuales son los puntos claves a tratar durante la asignatura si fuera posible.
+    - ¿Qué temas se ven en la asignatura?
+    - Este mensaje es para consultar el contenido de la asignatura
+    - Hola, ¿podría informarme sobre el temario de la asignatura?
+    - ¿Cómo esta divida la programación de contenidos de esta asignatura?
+    - Hola, me gustaría saber en qué consiste exactamente la asignatura y cual es el temario que se va a impartir.
+    - Muy buenas, ¿Cuales es el temario de la asignatura?
+    - Este es mi primer año en la universidad y no tengo muy claro el contenido de la asignatura en sí, podrías aclarármelo un poco?
+    - Cual son los tema principales de la asignatura?
+    - Buenas, le escribo porque me gustaría informarme de los contenidos que se impartirán en la asignatura. Muchas gracias de antemano
+    - ¿Que contenidos abarcará la asignatura?
+    - Me gustaría saber qué es lo que se va a estudiar en la asignatura.
+    - Buenas, ¿podría refrescarme cual sera el plan de contenidos y temario de la asignatura?
+    - Me gustaría saber cual será el temario impartido en la asignatura.
+    - ¿Qué contenidos son de los que nos vamos a examinar en la asignatura?
+    - ¿Donde podría consultar el contenido de la materia?
+    - ¿Los contenidos de la asignatura son los que están en el proyecto o han cambiado?
+    - ¿Cuáles son los contenidos específicos del temario de la asignatura?
+    - Buenas tardes, me gustaría saber la estructuración del temario que se va a impartir en la asignatura. Muchas gracias y disculpe las molestias. Un saludo.
+    - ¿Cuáles son los contenidos de la asignatura?
+    - ¿Qué tengo que estudiar exactamente?
+    - Buenas, me pongo en contacto con usted para preguntarle sobre el temario de la asignatura
+    - ¿Qué vamos a dar en la asignatura?
+    - Me gustaría saber el temario que abarca esta asignatura
+    - ¿De qué trata el temario de la asignatura?
+    - ¿Qué es lo que se dará en la asignatura?
+    - ¿Qué daremos en esta asignatura?
+    - Perdone, ¿qué contenidos veremos en la asignatura?
+    - ¿Sabe dónde puedo ver el temario completo de la asignatura?
+    - ¿Dónde puedo encontrar los contenidos de la asignatura?
+    - ¿Qué sale en la asignatura?
+    - ¿Dónde puedo buscar los contenidos de la asignatura?
+    - Que temario damos en esta asignatura
+    - ¿Cúal es el temario de la asignatura?
+
+- intent: previous_exams
+  examples: |
+    - ¿Podría darme exámenes de otros años, para así estudiar?
+    - ¿Podrías darme para estudiar exámenes de los años anteriores?
+    - ¿Podría tener los exámenes de otros años?
+    - Me puedes dar los examenes de otros años?
+    - Puesto que el examen es pronto, me gustaría saber si tenéis exámenes de años anteriores
+    - Me preguntaba si estaban disponibles para el alumnado un repositorio de exámenes de años pasados
+    - Podrías enseñarme modelos de exámenes anteriores
+    - ¿Podrías pasar examenes de cursos anterirores?
+    - ¿Existe algún repositorio de exámenes de otros años?
+    - ¿Dónde puedo conseguir los exámenes del año pasado?
+    - ¿Hay dispnibles exámenes de años anteriores?
+    - ¿Podría danos acceso a exámenes de años anteriores para poder prepararnos mejor?
+    - Me gustaría obtener los exámenes de años anteriores
+    - Buenas, me gustaría saber si existen exámenes de años anteriores para poder repasar
+    - ¿Tienes examenes de años anteriores?
+    - ¿Podria subir al repositorio examenes de otros años?
+    - ¿Es posible que nos proporcionen examenes de otros años para practicar?
+    - Examenes anteriores
+    - Hola, ¿sería posible que me pasase exámenes de otros años para practicar?
+    - Hola que tal. Sería posible que subiera algún examen de años anteriores para practicar? Gracias.
+    - Buenas tardes. ¿Podría indicarme donde obtener exámenes de años anteriores?
+    - ¿Podría pasarnos exámenes de años pasados?
+    - Buenas, podría prestarme algún exámen de años previos. Gracias de antemano.
+    - ¿Cual es el porcentaje de aprobación de la asignatura ? 
+    - ¿Podríamos disponer de un banco con los exámenes previos a los nuestros?
+    - ¿Tienes exámenes que podamos ver?
+    - ¿Dónde puedo conseguir exámenes de otros años?
+    - ¿Sería posible que publicaran exámenes de años anteriores?
+    - ¿Donde puedo encontar examenes de otros años?
+    - Hola, me surgía la duda de si es posible tener acceso a examenes de años anteriores para prepararme el examen.
+    - ¿Podrías darme exámenes de años pasados?
+    - Quiero solicitar exámenes resueltos de años anteriores para prepararme mejor de cara a la convocatoria
+    - Hola buenas tardes, me disponía a estudiar para el examen de la semana que viene y me gustaría echarle un ojo a examenes anteriores,  ¿estan disponibles en algun sitio?
+    - ¿Subirá exámenes de años anteriores al moodle?
+    - ¿Donde podría conseguir exámenes de años pasados?
+    - Buenas, me preguntaba si podría enviarme exámenes de años anteriores para tener una referencia de la manera en la que me voy a examinar
+    - Hola, podrían subir los exámenes de años anteriores para poder estudiar?
+    - ¿Podrían subirse exámenes de años anteriores para tener una prueba de lo que nos podemos esperar al examinarnos?
+    - ¿Podrías pasar los exámenes de años anteriores?
+    - Hola, podría subir los exámenes de otros años para poder practicar de cara al examen.
+    - Hola,¿ es posible contar con exámenes de otros años?
+    - ¿Podría subir al campus virtual examenes de otros años?
+    - Buenos días, le escribo por si usted podría subir algún examen de años anteriores a la plataforma para así podernos hacer una idea de como va a ser el de la convocatoria, gracias.
+    - Muy buenas, ¿Podemos ver exámenes de otros años?
+    - En otras asignaturas tenemos exámenes de años anteriores. ¿Sería posible contar con ellos en esta?
+    - Los exámenes de otros años son útiles para entender cómo se estructurará el examen?
+    - Buenas, me gustaría saber dónde puedo encontrar exámenes de otros años para estudiar para el examen de teoría
+    - Me gustaría ver ejemplos de exámenes de la asignatura, ¿Dónde podría obtenerlos?
+    - ¿Sería posible acceder a exámenes de años pasados?
+    - Buenas, ¿Podría tener acceso a exámenes de años anteriores?
+    - ¿ Existe alguna manera de obtener exámenes de año anteriores ?. 
+    - ¿Podrá aportar exámenes de años anteriores? Nos son útiles para estudiar y practicar.
+    - ¿Podría darnos un ejemplo de examen para poder estudiar para el siguiente examen?
+    - ¿Están los examenes de otros años disponibles?
+    - Buenas, ¿sería posible conseguir un examen de cursos anteriores?
+    - Buenas tardes, ¿sería posible que puedan colgar los exámenes de años anteriores que nos sirva como referencia a la hora de estudiar? Muchas gracias y disculpe las molestias. Un saludo.
+    - ¿Hay disponibles exámenes de años anteriores?
+    - Necesito exámenes anteriores, y si tienen soluciones, mejor.
+    - Buenas, seria posible contar con examenes de años anteriores para preparar mejor la asignatura
+    - ¿Nos podrían pasar exámenes de años anteriores?
+    - ¿Sería posible acceder a exámenes de otros años como ejemplo?
+    - ¿Podría subir a la plataforma de la asignatura algún examen de otros años?
+    - ¿Podría pasarnos exámenes de otros años para ayudarnos a estudiar?
+    - ¿Hay exámenes de otros años para hacer ejercicios?
+    - Disculpe, ¿Podría habilitar exámenes de otros años para practicar?
+    - Quería preguntar por la posibilidad de que se colgaran exámenes de años anteriores para poder estudiar.
+    - Quería saber si existen exámenes de años anteriores para repasar.
+    - Me gustaría ver exámenes de cursos anteriores
+    - ¿Podría dejarnos algún examen que nos sirva de guía?
+    - Hola, tienes exámenes de otros años de x asignatura
+    - Exámenes de otros años
+    - como va a ser el examen?
+
+- intent: group_change
+  examples: |
+    - Hola, me es incompatible asistir a clases ya que se solapa con otra asignatura ¿Podría cambiarme de grupo?
+    - ¿Puedo cambiarme de grupo?
+    - Quiero cambiarme de grupo de prácticas porque me coincide con otra asignatura. ¿Puedo?
+    - Me quiero cambiar de grupo
+    - Por coincidencia de clases, necesito cambiarme de grupo, era para saber que hacer para ello
+    - Me preguntaba si es posible realizar un cambio de grupo de prácticas
+    - ¿Puedo cambiarme de grupo ?
+    - Necesito cambiarme de grupo porque me coincide el horarío entre varias asignaturas,¿sería posible?
+    - No me es posible asistir a mi grupo y quisiera saber si hay algún problema en cambiarme de grupo
+    - ¿Podría cambiarme de grupo de prácticas?
+    - ¿Es posible cambiarse de grupo?
+    - ¿Cuáles serían los pasos necesarios para cambiarme de grupo?
+    - Me gustaría cambiarme del grupo de teoría a otro grupo
+    - Tengo un problema con los horarios y me gustaría cambiarme,¿ sería esto posible?
+    - El horario de prácticas se me solapa, ¿puedo cambiarme?
+    - ¿Podria cambiarme al grupo del martes?
+    - Puedo cambiarme de grupo de practicas a mitad del curso?
+    - Cambio de grupo
+    - Hola, debido a problemas con el horario no me es posible asistir a mi grupo actual de prácticas. ¿Sería posible?
+    - Buenas. necesito cambiarme de grupo de prácticas, por favor indíqueme si esto fuera posible.
+    - Buenos días. Me gustaría cambiarme de grupo de prácticas, ya que me coincide con otra asignatura
+    - Hola. Quisiera saber si puedo cambiar de grupo de teoría.
+    - Buenas, necesito cambiarme de grupo de prácticas al de los viernes. Podría indicarme como hacerlo. Gracias de antemano.
+    - ¿Es posible cambiar grupo ? 
+    - Me gustaría, a poder ser, cambiarme de grupo.
+    - Me quiero cambiar de grupo, ¿puedo?
+    - ¿Cómo puedo cambiarme de grupo de prácticas?
+    - Buenas, me comunico para solicitar un cambio del grupo 1 al 2
+    - ¿Es posible cambiar de grupo?
+    - Hola, Tengo un problema con la organización de mis clases y me preguntaba si existe la posiblidad de cambiarme de grupo.
+    - ¿Podría cambiarme al grupo de prácticas 44?
+    - No puedo asistir al grupo de prácticas que pertenezco por solape con otra asignatura. ¿Puedo cambiarme?
+    - Buenas tardes, quería cambiarme de grupo de prácticas puesto que se me solapan con las de otra asignatura y no puedo asistir, ¿existe alguna manera?
+    - Me gustaría cambiarme de grupo para cuadrar mi horario, ¿Qué debo hacer?
+    - ¿Puedo cambiarme a otro grupo de prácticas?
+    - Buenas, querría solicitar un cambio de grupo de teoría, ya que me coincide con otra asignatura
+    - Buenas tardes, estoy en el grupo 1 de teoría y debido a solapamiento de asignaturas me gustaría cambiarme al grupo 2 pero manteniendo mi grupo de prácticas
+    - Me coincide un grupo de práctica o teoría, me gustaría saber si puedo cambiarme a otro que me viene mejor.
+    - Quiero solicitar un cambio de grupo
+    - Hola, debido al solape de horarios, pido un cambio de grupo de prácticas.
+    - Buenas, le escribo porque necesito cambiarme de grupo de prácticas
+    - Me pongo en contacto con ustede porque actualmente no puedo asistir al grupo de prácticas al que estoy acogido. Necesito cambiarme de grupo.
+    - Hola, necesito cambiarme del grupo de prácticas ya que se me solapa con otra asignatura, ¿existe algún hueco libre en otro horario de clases?
+    - Muy buenas, me gustaría saber si sería posible cambiarme de grupo de prácticas, un saludo.
+    - Por incompatibilidad de horario necesito cambiar del grupo 41 de tarde al grupo 43 de la mañana. ¿Sería posible?
+    - Puedo cambiar grupo de practicas o teoria?
+    - Buenas, tengo un problema para asistir a mis grupos actuales de práctica y teoría. Me gustaría saber si podría cambiarme a otro
+    - Tengo un problema con la asistencia a mi grupo, ¿Podría realizar un cambio de grupo?
+    - Quería preguntar si podría ser posible cambiar de grupo de teoría debido a coincidencias de horario con otras asignaturas.
+    - Hola, me gustaría solicitar un cambio de grupo en mis horas de practica por coincidencia con otra asignatura
+    - Me gustaría solicitar un cambio de grupo,  ¿ Cómo debería hacerlo ?.
+    - Tengo un problema con mi grupo de prácticas, ya que me coincide con el de otra asignatura. ¿Puede decirme si puedo cambiarmea otro?
+    - Seria posible cambiar de grupo ya que se me dificulta asistir al actual.
+    - No puedo asistir al grupo de prácticas que se me asigno. ¿cómo podría cambiarme de grupo?
+    - Hola, debido a un solapamiento necesito cambiarme de grupo de prácticas. ¿Sería posible?
+    - Buenas tardes, debido a solapamiento de asignaturas en mi horario me veo en la necesidad de solicitar un cambio de grupo. Muchas gracias y disculpe las molestias. Un saludo.
+    - ¿Cuál es el procedimiento a seguir para un cambio de grupo?
+    - ¿puedo cambiarme de grupo?
+    - Buenas, me pongo en contacto con usted para saber si seria posible cambiarme de grupo de practicas
+    - ¿Me pueden cambiar de grupo de prácticas?
+    - Me gustaría solicitar un cambio de grupo
+    - Necesito cambiarme de grupo. ¿Es posible hacer un cambio de grupo? 
+    - Me gustaría cambiar de grupo porque en el que estoy el horario me viene mal
+    - Me gustaría cambiarme de grupo
+    - Perdone, me viene mejor otro grupo de prácticas, ¿podría cambiarme?
+    - Disculpa, mi horario de la asignatura es incompatible con otras ¿Podría solicitar un cambio de grupo?
+    - Quiero cambiarme de clase, ¿Qué es lo que tengo que hacer?
+    - Me gustaría cambiarme de grupo
+    - ¿Podría cambiarme de grupo?
+    - Se me solapan asignaturas, ¿puedo ir a otro grupo?
+    - Solicitar cambio de grupo de prácticas
+
+- intent: times
+  examples: |
+    - ¿Cuándo es la fecha de entrega de las prácticas?
+    - ¿Cuándo es el próximo examen?
+    - Cuales son las proximas fechas importantes?
+    - ¿Cuándo hay que entregar la práctica que mandó la semana pasada? ¿Cuándo es el examen de la convocatoría?
+    - Me preguntaba cuando deben entregarse las prácticas de la asignatura
+    - ¿Cuando se entrega la siguiente práctica?
+    - ¿Cuando será la entrega de los examenes y las prácticas??
+    - ¿Podríamos conocer las fechas de prácticas y exámenes?
+    - ¿Cuáles son las próximas tareas de la asignatura?
+    - ¿En qué fechas hay prácticas o exámenes?
+    - ¿Cuándo serían las fechas de entrega de prácticas y exámenes?
+    - ¿Cuando se entreha la práctica?
+    - ¿Qué día se entregan las prácticas?
+    - ¿Qué día cae el exámen de ordinaria?
+    - ¿Sobre que fecha comienzan los examenes?
+    - ¿Cuando será la entrega de practicas o las defensas?
+    - Fechas
+    - Hola, tengo dudas sobre las fechas de entregas y exámenes de la asigantura. ¿Me podría decis cuáles son?
+    - buenas. Cuando se entregan las prácticas? y las fechas de los exámenes?
+    - Buenas. ¿Podría indcarme donde ver la fecha de exámenes y de entregas de practicas en el campus?
+    - ¿Cuándo serán las fechas de entrega de prácticas y de exámenes?
+    - Buenas, me gustaría saber la fecha de entrega de las prácticas y exámenes de la asignatura.
+    - ¿Cuando podemos entregar las practicas ? 
+    - ¿Existe algún calendario con las fechas de exámenes y entrega de prácticas?
+    - ¿Que fechas remarcables tenemos para esta asignatura?
+    - ¿Cuándo es la entrega de las prácticas y cuándo son los exámenes?
+    - Hola, está fijada la fecha del examen parcial y en caso afirmativo, caundo es esta
+    - ¿Cuando hay que entregar el trabajo?
+    - Hola, ¿podria indicarme cuando es la fecha límte para la entrega de las práctias?
+    - ¿Cuáles son las fechas de los exámenes y entrega de prácticas?
+    - Quiero conocer las próximas entregas, exámenes u otras tareas a entregar del próximo mes
+    - Me gustaría saber hasta cuando se pueden entregar las prácticas. Gracias de antemano
+    - ¿Cuándo hay que entregar las prácticas? ¿Y la fecha del exámen ordinario?
+    - ¿Cuando es el examen final?
+    - Buenas, me gustaría saber el calendario de fechas de exámenes, prácticas y otras entregas. Muchas gracias
+    - Buenas tardes, cual es la fecha de entrega de las prácticas?
+    - ¿Podría decirme cuales son las fechas disponibles para las entregas prácticas y exámenes de la asignatura?
+    - ¿Cuál es el calendario de prácticas y exámenes?
+    - Hola. Me gustaría saber la fecha de entrega de las prácticas de laboratorio, así como la fecha de los exámenes.
+    - ¿Podría decirme cuando serán los exámenes?
+    - ¿Cuándo publicareis las notas de las prácticas y los exámenes?
+    - Buenos días, me gustaría saber cuales son las fechas de entregas de las prácticas y cuando sería la fecha del examen propuesto. Muchas gracias y disculpe las molestias.
+    - Muy buenas, me gustaría saber la fecha de entrega de la práctica 2.
+    - ¿Podríamos tener en el campus un calendario con todas las fechas de entrega de las prácticas y los exámenes?
+    - Puedo saber la fecha de entrega de prácticas y exámenes?
+    - Buenas, le escribo este correo porque agradecería que me recordara la fecha de entrega de las prácticas y la fecha de los exámenes.
+    - ¿Cuáles son las fechas para entregar las prácticas?¿Y los exámenes?
+    - ¿Las prácticas se entregan el mismo día del examen o en otra fecha?
+    - Disculpe, ¿Podrías recordarme las fechas de entrega de practicas y de realización de exámenes?
+    - ¿ Dónde puedo encontrar la fecha límite para la entrega de trabajos o exámenes ?.
+    - Me gustaría saber la fecha límite para entregar las prácticas y la del examen de la convocatoria.
+    - ¿Cual es la fecha limite para la entrega de practicas y exámenes?
+    - ¿Hasta que fecha estará disponible la entrega de última práctica?
+    - Buenas, ¿podría confirmarme las fechas de entrega de las prácticas y los días de realización de los exámenes de la asginatura?, gracias. 
+    - Buenas tardes, me gustaría saber la planificación de la asignatura que imparte. Muchas gracias y disculpe las molestias. Un saludo.
+    - ¿Cuál es la fecha de entrega de prácticas y de exámenes?
+    - ¿Hay algún calendario de exámenes y tal?
+    - Buenas, me gustaria saber cuando es la fecha limite de la entrega de las practicas
+    - ¿Cuándo son los exámenes, y para cuándo se entregan las prácticas?
+    - ¿Cuándo se entrega la práctica?
+    - ¿Cuáles son las fechas de entrega de las prácticas y del examen?
+    - ¿Cuándo será la fecha de entrega de la práctica? ¿Y el examen cuándo es?
+    - ¿Para cuándo es la práctica?
+    - Perdone, ¿cuándo se entregaría la práctica?
+    - ¿Se sabe cuál es la fecha límite para la entrega de la práctica, y del examen final?
+    - ¿Cuáles son las fechas de los exámenes?
+    - ¿Cuándo es la entrega de las prácticas y los exámenes?
+    - ¿Cuáles son las fechas de entrega más importantes?
+    - Hola buenos días, cuando se entrega las prácticas.
+    - Fecha de entrega de las prácticas
+
+- intent: schedule
+  examples: |
+    - ¿Qué horario tiene la asignatura?
+    - ¿Cuándo son las clases?
+    - Me puede dar el horario?
+    - quiero saber cuándo son las clases
+    - ¿Me dice las horas de clase?
+    - A qué hora empiezan las clases?
+    - Cuál es la distribución horaria de las clases durante la semana?
+    - horario de clases.
+    - Horarios de clases.
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: my_name
+  examples: |
+    - Con el profesor [Daniel]{"entity":"name","value":"Daniel"}
+    - Con [Mario]{"entity":"name","value":"Mario"}
+    - [Cayetano]{"entity":"name","value":"Cayetano"}
+    - Me gustaría con [Daniel]{"entity":"name","value":"Daniel"}
+
+- intent: turn_day
+  examples: |
+    - En el turno de [mañana]{"entity":"turn"}
+    - En el turno de [tarde]{"entity":"turn"}
+    - [tarde]{"entity":"turn"}
+    - [mañana]{"entity":"turn"}
+    - Por la [mañana]{"entity":"turn"}
+    - Por la [tarde]{"entity":"turn"}
+    - En la [mañana]{"entity":"turn"}
+    - De [mañana]{"entity":"turn"}
+
+# Casos que no entiende.
+- intent: out_of_scope
+  examples: |
+    - ¿Qué es el pensamiento humano?
+    - ¿Existe Dios?
+    - Quien es Dios?
+    - Cual es la raiz cuadrada de 20
+    - Suma 1 + 1
+
